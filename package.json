@@ -3,12 +3,26 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "build:tailwind": "pnpx tailwindcss -i ./lib/index.css -o ./dist/styles/tailwind.build.min.css --minify",
+    "build:tailwind": "pnpm dlx tailwindcss -i ./lib/index.css -o ./dist/styles/tailwind.build.min.css --minify",
     "storybook": "concurrently \"pnpm watch:tailwind\" \"pnpm watch:storybook\"",
     "watch:tailwind": "pnpm build:tailwind --watch",
     "watch:storybook": "storybook dev -p 6006",

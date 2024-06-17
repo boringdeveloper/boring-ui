@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { PressEvent, Button as RacButton } from "react-aria-components";
 
-interface IButton {
+export interface IButton {
   className?: string;
   type: "info" | "success" | "danger";
   onPress: (e: PressEvent) => void;
