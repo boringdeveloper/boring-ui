@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .button {
+    @apply px-5 py-3 rounded-md text-xs font-bold tracking-widest leading-tight uppercase shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-fit h-fit;
+  }
+
+  .button-success {
+    @apply bg-green-500 text-white hover:bg-green-700 focus:bg-green-700 active:bg-green-700;
+  }
+
+  .button-info {
+    @apply bg-blue-500 text-white hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-700;
+  }
+
+  .button-danger {
+    @apply bg-red-500 text-white hover:bg-red-700 focus:bg-red-700 active:bg-red-700;
+  }
+}
