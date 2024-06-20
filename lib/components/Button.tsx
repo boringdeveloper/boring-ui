@@ -2,26 +2,25 @@ import { ReactNode } from "react";
 import { PressEvent, Button as RacButton } from "react-aria-components";
 
 export interface IButton {
-  className?: string;
   type: "info" | "success" | "danger";
   onPress: (e: PressEvent) => void;
   children: ReactNode;
 }
 
 export const Button = (props: IButton) => {
-  const { className, type, onPress, children } = props;
+  const { type, onPress, children } = props;
 
-  let __className = `button ${className}`;
+  let styleClassName = "";
 
   switch (type) {
     case "success":
-      __className += " button-success";
+      styleClassName = " button-success";
       break;
     case "info":
-      __className += " button-info";
+      styleClassName = " button-info";
       break;
     case "danger":
-      __className += " button-danger";
+      styleClassName = " button-danger";
       break;
 
     default:
@@ -29,7 +28,7 @@ export const Button = (props: IButton) => {
   }
 
   return (
-    <RacButton className={__className} onPress={onPress}>
+    <RacButton className={`button ${styleClassName}`} onPress={onPress}>
       {children}
     </RacButton>
   );

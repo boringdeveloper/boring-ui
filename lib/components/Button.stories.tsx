@@ -11,7 +11,7 @@ const meta = {
   tags: ["autodocs"],
   args: {
     onPress: fn(),
-    children: <span>Hello World</span>,
+    children: <span>Click Me!</span>,
   },
 } satisfies Meta<typeof Button>;
 
